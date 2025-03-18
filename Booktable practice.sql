@@ -37,14 +37,29 @@ PRAGMA table_info(Booktable);
 
 -- Step 9: Select books with PurchaseCost greater than 12
 SELECT * FROM Booktable WHERE PurchaseCost > 12;
+-- SQL Exercise on Queries and Data Operations
 
-Select DISTINCT Category from Booktable;
-Select * from Booktable WHERE Status ="Out";
-Select * from Booktable Limit 3;
-Select count(BookISBN) from Booktable WHERE Category ="Travel";
-Select * from Booktable;
 
-DELETE from Booktable WHERE BookISBN IN ("978-1-119-95055-02-4", "978-0-261-81762-01-2");
-SELECT * from Booktable WHERE BookISBN IN ("978-1-119-95055-02-4", "978-0-261-81762-01-2");
+--additional Q:
+-- 1. What is the output of this query?
+SELECT * FROM Booktable WHERE PurchaseCost > 12;
+
+-- 2. What is the output of this query?
+SELECT DISTINCT Category FROM Booktable;
+
+-- 3. How can you retrieve all the data from Booktable where Status equals 'Out'?
+SELECT * FROM Booktable WHERE Status = 'Out';
+
+-- 4. How can you retrieve only the first 3 rows from Booktable?
+SELECT * FROM Booktable LIMIT 3;
+
+-- 5. How can you count all books where the Category equals 'Travel'?
+SELECT COUNT(BookISBN) FROM Booktable WHERE Category = 'Travel';
+
+-- 6. How can you delete the books with specific ISBNs (978-1-119-95055-02-4, 978-0-261-81762-01-2)?
+DELETE FROM Booktable WHERE BookISBN IN ('978-1-119-95055-02-4', '978-0-261-81762-01-2');
+
+-- 7. How can you verify if the books were deleted?
+SELECT * FROM Booktable WHERE BookISBN IN ('978-1-119-95055-02-4', '978-0-261-81762-01-2');
 
 
